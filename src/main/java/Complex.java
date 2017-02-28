@@ -10,7 +10,7 @@ public class Complex {
     public Complex() {}
 
     public Complex( double dReal, double dImaginary ) {
-        this.re      = dReal;
+        this.re = dReal;
         this.im = dImaginary;
     }
 
@@ -95,5 +95,23 @@ public class Complex {
         return ( dAnswer );
     }
 
+    public String Conjugation(){
+        this.re = re;
+        this.im = -im;
+        if (im < 0)
+            return re + "-" + -im + "i";
+        else
+            return re + "+" + im + "i";
+
+    }
+
+    /*public double Argument(){
+    }
+
+    public Complex QudraticRootNumber(){
+        Complex a = new Complex();
+        Complex b = new Complex();
+        Complex c = new Complex();
+        Complex D = new Complex();*/
 
 }

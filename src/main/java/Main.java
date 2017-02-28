@@ -4,13 +4,13 @@ import java.util.Scanner;
  * Created by Админ on 20.01.2017.
  */
 public class Main {
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Complex number program");
         System.out.println("===========================");
 
         // Setup and print two complex numbers .....
 
-        Complex cA = new Complex( 1.0, 2.0 );
+        Complex cA = new Complex( 1.0, -2.0 );
         Complex cB = new Complex( 3.0, 4.0 );
 
         System.out.println("Complex number cA = " + cA.toString() );
@@ -35,17 +35,13 @@ public class Main {
         System.out.println("Complex  cA.Abs() = " + cA.Abs2() );
         System.out.println("Complex  cB.Abs() = " + cB.Abs2() );
 
-    }
+        System.out.println("Conjugation = " + cA.Conjugation());
+        System.out.println("Conjugation = " + cB.Conjugation());
 
 
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        double len = input.nextDouble();
-        double wid = input.nextDouble();
-        double hd = input.nextDouble();
-        Prpar prpar = new Prpar(len, wid, hd);
-        System.out.println("Obyom = " + prpar.Obyom());
-        System.out.println("Square = " + prpar.Square());
 
     }
+
+
+
 }
