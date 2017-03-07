@@ -1,9 +1,13 @@
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
  * Created by 1081_1 on 28.02.17.
  */
 public class ComplexTest {
+
+
     Complex a = new Complex(1.1, 2.1);
     Complex b = new Complex(1.3, 1.4);
     Complex c = new Complex(1.134534, 34345.3);
@@ -26,31 +30,43 @@ public class ComplexTest {
 
     @org.junit.Test
     public void mult() throws Exception {
-        assertEquals(new Complex(-1.50999, 4.27), a.Mult(b));
+        assertEquals(new Complex(-1.51, 4.27), a.Mult(b));
         assertEquals(new Complex(-72123.882, 37782.212), a.Mult(c));
         assertEquals(new Complex(-48081.94, 44650.478), c.Mult(b));
     }
 
     @org.junit.Test
     public void div() throws Exception {
-        assertEquals(new Complex(0.84615384615, 1.5), a.Div(b));
-        assertEquals(new Complex(0.96956107088, 0.00006114373), a.Div(c));
-        assertEquals(new Complex(0.87271846153, 24532.3571429), c.Div(b));
+        assertEquals(new Complex(1.19, 0.32), a.Div(b));
+        assertEquals(new Complex(6.11, 3.2), a.Div(c));
+        assertEquals(new Complex(13173.9, 12232.13), c.Div(b));
     }
 
     @org.junit.Test
     public void abs2() throws Exception {
-
+        assertEquals(new Complex(2.37, 0.0), a.Abs2());
+        assertEquals(new Complex(34345.3, 0.0), c.Abs2());
+        assertEquals(new Complex(1.91, 0.0), b.Abs2());
     }
 
     @org.junit.Test
     public void conjugation() throws Exception {
-
+        assertEquals(new Complex(1.1, -2.1), a.Conjugation());
+        assertEquals(new Complex(1.3, -1.4), b.Conjugation());
+        assertEquals(new Complex(1.134534, -34345.3), c.Conjugation());
     }
 
-    /*public static boolean equality( first, double second) {
-        double epsilon = 0.0000005;
-        return Math.abs(first - second) < epsilon;
-    }*/
+    @org.junit.Test
+    public void argument() throws Exception {
+        assertEquals(new Complex (1.088), a.Argument());
+        assertEquals(new Complex(0.822), b.Argument());
+        assertEquals(new Complex(1.57), c.Argument());
+    }
+
+
+    @org.junit.Test
+    public void quadraticRoot() throws Exception {
+
+    }
 
 }

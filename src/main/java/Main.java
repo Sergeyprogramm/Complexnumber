@@ -19,9 +19,9 @@ public class Main {
        //Complex addition and substraction .....
 
         Complex cC = cA.Add(cB);
-        System.out.println("Complex   cA + cB = " + cC.toString() );
-        Complex cD = cA.Sub( cB );
-        System.out.println("Complex   cA - cB = " + cD.toString() );
+        System.out.println("Complex   cA + cB = " + cC.toString());
+        Complex cD = cA.Sub(cB);
+        System.out.println("Complex   cA - cB = " + cD.toString());
 
 
         // Test complex multiplication and division .....
@@ -38,7 +38,14 @@ public class Main {
         System.out.println("Conjugation = " + cA.Conjugation());
         System.out.println("Conjugation = " + cB.Conjugation());
 
+        System.out.println("Argument = " + cA.Argument());
+        System.out.println("Argument = " + cB.Argument());
 
+        Scanner input = new Scanner(System.in);
+        double a = input.nextDouble();
+        double b = input.nextDouble();
+        double c = input.nextDouble();
+        cF.quadraticRoot(a, b ,c);
 
     }
 

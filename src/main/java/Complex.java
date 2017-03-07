@@ -1,7 +1,7 @@
 /**
  * Created by Админ on 16.02.2017.
  */
-public class Complex {
+public  class Complex {
     protected double re, im;
 
 
@@ -9,10 +9,28 @@ public class Complex {
 
     public Complex() {}
 
+    public static final Complex NaN = new Complex(Double.NaN, Double.NaN);
+
+    public double getImaginary() {
+        return dImaginary;
+    }
+
+    private static final double EPS = 1e-12;
+
+    protected double dImaginary;
+
+    protected double dReal;
+
+    public double getReal(){
+        return dReal;
+    }
+
     public Complex( double dReal, double dImaginary ) {
         this.re = dReal;
         this.im = dImaginary;
     }
+
+
 
     // Convert complex number to a string ...
 
@@ -105,13 +123,88 @@ public class Complex {
 
     }
 
-    /*public double Argument(){
+    public double Argument(){
+        double arg;
+        if (re == 0)
+            if(im > 0)
+                return arg = Math.PI/2;
+            else
+                return arg = -Math.PI/2;
+        else
+        if (re > 0)
+            return arg = Math.atan(im/re);
+        else if (im >= 0)
+            return arg = Math.PI + Math.atan2(re,im);
+        else
+            return arg = -Math.PI + Math.atan(im/re);
+            }
+
+    public void quadraticRoot (double a, double b, double c) {
+        Complex z1 = new Complex(0.0, 0.0);
+        Complex z2 = new Complex(0.0, 0.0);
+        double d = Math.pow(b, 2) - 4 * a * c;
+        if (d > 0) {
+            z1.re = (-b + Math.sqrt(d)) / (2 * a);
+            z2.re = (-b - Math.sqrt(d)) / (2 * a);
+            z1.im = 0.0;
+            z2.im = 0.0;
+        }
+        if (d == 0.0) {
+            z1.re = -b / 2 * a;
+            z1.im = 0.0;
+        }
+        if (d < 0) {
+            z1.re = -b / 2 * a;
+            z1.im = Math.sqrt(-d) / (2 * a);
+            z2.re = -b / 2 * a;
+            z2.im = -Math.sqrt(-d) / (2 * a);
+        }
+        System.out.println("A =" + a + " " + "B = " + b + " " + "C = " + c + " " + "D = " + d);
+        System.out.println("Z1 = " + z1 + "  " + "Z2 = " + z2);
     }
 
-    public Complex QudraticRootNumber(){
-        Complex a = new Complex();
-        Complex b = new Complex();
-        Complex c = new Complex();
-        Complex D = new Complex();*/
+    /*public boolean equals(Object other) {
+        boolean ret;
+
+        if (this  == other) {
+            ret = true;
+        } else if (other == null) {
+            ret = false;
+        } else {
+            try {
+                Complex rhs = (Complex) other;
+                if (rhs.isNaN()) {
+                    ret = this .isNaN();
+                } else {
+                    ret = (Double.doubleToRawLongBits(dReal) == Double
+                            .doubleToRawLongBits(rhs.getReal()))
+                            && (Double.doubleToRawLongBits(dImaginary) == Double
+                            .doubleToRawLongBits(rhs
+                                    .getImaginary()));
+                }
+            } catch (ClassCastException ex) {
+
+                ret = false;
+            }
+        }
+
+        return ret;
+    }
+
+    public Complex isNaN() {
+        return NaN;
+    }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }*/
+
+
+
+
+
 
 }
